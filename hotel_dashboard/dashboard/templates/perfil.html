@@ -1,0 +1,320 @@
+<html lang="es">
+ <head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Perfil de Usuario Sin Responsividad Vertical</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&amp;display=swap" rel="stylesheet" />
+  <style>
+   body {
+    font-family: "Inter", sans-serif;
+   }
+  </style>
+ </head>
+ <body class="bg-white text-gray-900 min-h-screen flex flex-col">
+  <div class="flex flex-1 min-h-0">
+   <!-- Left Sidebar -->
+   <aside class="w-48 border-r border-gray-200 flex flex-col px-4 py-6 shrink-0">
+    <div class="flex items-center space-x-2 mb-10">
+     <img
+      alt="Icono de usuario redondo color negro con fondo blanco"
+      class="rounded-full"
+      height="24"
+      src="https://storage.googleapis.com/a1aa/image/ce6538a6-c13d-463a-2274-e8142c968c0e.jpg"
+      width="24"
+     />
+     <span class="text-sm font-normal text-gray-900">Nombre Cliente</span>
+    </div>
+    <nav class="flex flex-col space-y-4 text-gray-500 text-sm font-normal">
+     <a class="flex items-center space-x-2 hover:text-gray-900 transition-colors" href="#">
+      <i class="far fa-address-card text-base"></i>
+      <span>Perfil Usuario</span>
+     </a>
+     <a class="flex items-center space-x-2 hover:text-gray-900 transition-colors" href="#">
+      <i class="far fa-calendar-alt text-base"></i>
+      <span>Reserva Previa</span>
+     </a>
+     <a class="flex items-center space-x-2 hover:text-gray-900 transition-colors" href="#">
+      <i class="far fa-comment-alt text-base"></i>
+      <span>Mensajes</span>
+     </a>
+    </nav>
+   </aside>
+   <!-- Main Content -->
+   <main class="flex-1 flex flex-col border-r border-gray-200 min-w-0">
+    <!-- Top bar -->
+    <header
+     class="flex items-center justify-between px-6 py-3 border-b border-gray-200 text-gray-700 text-sm font-normal shrink-0"
+    >
+     <div class="flex items-center space-x-4 min-w-0">
+      <i class="far fa-book-open text-base flex-shrink-0"></i>
+      <i class="far fa-star text-base flex-shrink-0"></i>
+      <span>/</span>
+      <span class="truncate">Nombre Usuario</span>
+     </div>
+     <div class="flex items-center space-x-4 text-gray-400">
+      <div class="flex items-center bg-gray-100 rounded-full px-3 py-1 text-xs text-gray-400">
+       <i class="fas fa-search mr-1"></i>
+       <input
+        class="bg-transparent placeholder-gray-400 focus:outline-none text-xs w-24"
+        placeholder="Buscador"
+        type="search"
+       />
+      </div>
+      <button aria-label="Modo oscuro" class="hover:text-gray-900">
+       <i class="far fa-sun text-base"></i>
+      </button>
+      <button aria-label="Historial" class="hover:text-gray-900">
+       <i class="fas fa-redo-alt text-base"></i>
+      </button>
+      <button aria-label="Notificaciones" class="hover:text-gray-900">
+       <i class="far fa-bell text-base"></i>
+      </button>
+      <button aria-label="Menú" class="hover:text-gray-900">
+       <i class="far fa-th-large text-base"></i>
+      </button>
+     </div>
+    </header>
+    <!-- Profile Section -->
+    <section class="flex-1 p-6 bg-gray-100 overflow-auto flex justify-center">
+     <form
+      autocomplete="off"
+      class="bg-gray-200 rounded-xl p-6 sm:p-8 flex flex-col w-full max-w-full sm:max-w-4xl mx-auto space-y-6"
+      style="flex-wrap: nowrap;"
+     >
+      <div
+       class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 select-none"
+       style="flex-wrap: nowrap;"
+      >
+       <h2 class="font-bold text-sm text-black mb-2 sm:mb-0">Perfil de Usuario</h2>
+       <button
+        aria-label="Fecha actual"
+        class="text-xs text-gray-600 font-normal flex items-center space-x-1"
+       >
+        <span>Hoy Domingo 13-04-2025</span>
+        <i class="fas fa-chevron-down text-xs"></i>
+       </button>
+      </div>
+      <!-- Nombre -->
+      <div class="flex flex-col">
+       <label
+        class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+        for="nombre"
+        >Nombre:</label
+       >
+       <input
+        class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+        id="nombre"
+        readonly=""
+        type="text"
+        value="Leonardo Mauricio Hurtado Regle"
+       />
+      </div>
+      <!-- RUT/DNI -->
+      <div class="flex flex-col">
+       <label
+        class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+        for="rut"
+        >RUT/DNI:</label
+       >
+       <input
+        class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+        id="rut"
+        readonly=""
+        type="text"
+        value="12.345.678-9"
+       />
+      </div>
+      <!-- Dirección -->
+      <div class="flex flex-col">
+       <label
+        class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+        for="direccion"
+        >Dirección:</label
+       >
+       <input
+        class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+        id="direccion"
+        readonly=""
+        type="text"
+        value="Caleta Horcón 1147, Puente alto, Región Metropolitana, Chile"
+       />
+      </div>
+      <!-- Correo Electrónico -->
+      <div class="flex flex-col">
+       <label
+        class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+        for="correo"
+        >Correo Electrónico:</label
+       >
+       <input
+        class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+        id="correo"
+        readonly=""
+        type="email"
+        value="leon.hurtado@duocuc.cl"
+       />
+      </div>
+      <!-- Fecha de nacimiento y Hijos -->
+      <div class="flex flex-nowrap gap-4">
+       <div class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]">
+        <label
+         class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+         for="fecha-nacimiento"
+         >Fecha de nacimiento</label
+        >
+        <input
+         class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+         id="fecha-nacimiento"
+         readonly=""
+         type="text"
+         value="29/12/1994"
+        />
+       </div>
+       <div class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]">
+        <label
+         class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+         for="hijos"
+         >Hijos:</label
+        >
+        <input
+         class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+         id="hijos"
+         readonly=""
+         type="text"
+         value="1 hombre."
+        />
+       </div>
+      </div>
+      <!-- Mascota y Asistencia -->
+      <div class="flex flex-nowrap gap-4">
+       <div class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]">
+        <label
+         class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+         for="mascota"
+         >Mascota:</label
+        >
+        <input
+         class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+         id="mascota"
+         placeholder="Ingrese la Raza de mascota."
+         type="text"
+        />
+       </div>
+       <div class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]">
+        <label
+         class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+         for="asistencia"
+         >Es de asistencia?</label
+        >
+        <input
+         class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+         id="asistencia"
+         placeholder="Indique la razón de asistencia"
+         type="text"
+        />
+       </div>
+      </div>
+      <!-- Observaciones -->
+      <div class="flex flex-col">
+       <label
+        class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+        for="observaciones"
+        >Observaciones:</label
+       >
+       <textarea
+        class="rounded-2xl px-4 py-3 text-xs text-gray-400 placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-gray-300"
+        id="observaciones"
+        placeholder="Ingrese sus requerimientos especiales como alergias o condiciones especiales que tengas."
+        rows="4"
+       ></textarea>
+      </div>
+      <!-- Botón Guardar -->
+      <div class="flex justify-end">
+       <button
+        class="bg-gradient-to-r from-green-400 to-green-500 text-black text-sm font-normal rounded-full px-8 py-2 shadow-md hover:shadow-lg transition-shadow"
+        type="submit"
+       >
+        Guardar
+       </button>
+      </div>
+     </form>
+    </section>
+   </main>
+   <!-- Right Sidebar -->
+   <aside class="w-48 px-4 py-6 text-xs text-gray-700 shrink-0">
+    <div class="mb-6">
+     <h3 class="font-semibold text-gray-900 mb-3">Novedades del Hotel</h3>
+     <ul class="space-y-3">
+      <li class="flex space-x-2">
+       <img
+        alt="Icono de actividades matutinas en azul"
+        class="flex-shrink-0"
+        height="20"
+        src="https://storage.googleapis.com/a1aa/image/508f042f-b766-4d94-1197-cc6e22068c98.jpg"
+        width="20"
+       />
+       <div>
+        <p class="font-semibold text-gray-900 leading-tight">Nuevas Actividades</p>
+        <p class="text-gray-400 leading-tight">actividades matutinas</p>
+       </div>
+      </li>
+      <li class="flex space-x-2">
+       <img
+        alt="Icono de seguridad en azul"
+        class="flex-shrink-0"
+        height="20"
+        src="https://storage.googleapis.com/a1aa/image/ff3208b9-6e5c-4234-0373-0e8346d99b85.jpg"
+        width="20"
+       />
+       <div>
+        <p class="font-semibold text-gray-900 leading-tight">Nuevo Jefe de seguridad</p>
+        <p class="text-gray-400 leading-tight text-[9px] leading-tight max-w-[180px]">
+         Contamos con un nuevo jefe de seguridad para actualizar los sistemas digitales del Hotel
+        </p>
+       </div>
+      </li>
+      <li class="flex space-x-2">
+       <img
+        alt="Icono de sistemas de entretenimiento y seguridad en azul"
+        class="flex-shrink-0"
+        height="20"
+        src="https://storage.googleapis.com/a1aa/image/08032dc2-4e6b-4fe0-dc78-d0bd99e54efa.jpg"
+        width="20"
+       />
+       <div>
+        <p class="font-semibold text-gray-900 leading-tight">Nuevos Sistemas</p>
+        <p class="text-gray-400 leading-tight text-[9px] leading-tight max-w-[180px]">Nuevos sistemas de Entretenición y de Seguridad</p>
+       </div>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h3 class="font-semibold text-gray-900 mb-3">Actividades Extras</h3>
+     <ul class="space-y-3 text-[11px]">
+      <li>
+       <p class="font-semibold text-gray-900 leading-tight">Paseo turistico por la ciudad</p>
+       <p class="text-gray-400 leading-tight">Hasta el 30 de julio</p>
+      </li>
+      <li>
+       <p class="font-semibold text-gray-900 leading-tight">Aeróbic acuatico</p>
+       <p class="text-gray-400 leading-tight">De Lun a Vie a las 16:00 hrs</p>
+      </li>
+      <li>
+       <p class="font-semibold text-gray-900 leading-tight">Tarde de cine</p>
+       <p class="text-gray-400 leading-tight">De Vie a Dom a las 22:00 hrs</p>
+      </li>
+      <li>
+       <p class="font-semibold text-gray-900 leading-tight">Cena Romantica</p>
+       <p class="text-gray-400 leading-tight">Sabado 26 de abril 22:30 hrs</p>
+      </li>
+      <li>
+       <p class="font-semibold text-gray-900 leading-tight">Aerobox Familiar</p>
+       <p class="text-gray-400 leading-tight">Lun a Vie 10:00 hrs</p>
+      </li>
+     </ul>
+    </div>
+   </aside>
+  </div>
+ </body>
+</html>
