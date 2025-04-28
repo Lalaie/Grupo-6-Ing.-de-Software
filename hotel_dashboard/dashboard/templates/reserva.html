@@ -1,320 +1,239 @@
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>Reserva Hotel</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet"
-  />
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Reserva Hotel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
+
 <body class="bg-white text-black">
-  <div class="flex min-h-screen">
-    <!-- Left Sidebar -->
-    <aside class="w-56 border-r border-gray-200 flex flex-col px-6 py-6 select-none">
-      <div class="flex items-center space-x-2 mb-12">
-        <img
-          alt="Icono usuario pequeño, círculo negro con fondo blanco"
-          class="rounded-full"
-          height="24"
-          src="https://storage.googleapis.com/a1aa/image/5766ec36-791e-49d1-cfa4-22ddb55c38eb.jpg"
-          width="24"
-        />
-        <span class="text-sm">Nombre Cliente</span>
-      </div>
-      <nav class="flex flex-col space-y-6 text-gray-500 text-sm font-normal">
-        <a
-          class="flex items-center space-x-2 hover:text-black transition-colors duration-200"
-          href="#"
-          ><i class="fas fa-user-circle text-base"></i><span>Perfil Usuario</span></a
-        >
-        <a
-          class="flex items-center space-x-2 hover:text-black transition-colors duration-200"
-          href="#"
-          ><i class="fas fa-calendar-check text-base"></i><span>Reserva Previa</span></a
-        >
-        <a
-          class="flex items-center space-x-2 hover:text-black transition-colors duration-200"
-          href="#"
-          ><i class="far fa-comment-dots text-base"></i><span>Mensajes</span></a
-        >
-      </nav>
-    </aside>
-    <!-- Main Content -->
-    <main class="flex-1 flex flex-col px-6 py-6">
-      <!-- Top bar -->
-      <header
-        class="flex items-center justify-between text-gray-700 text-sm font-normal mb-6 select-none"
-      >
-        <div class="flex items-center space-x-3">
-          <i class="far fa-th-large text-base"></i>
-          <i class="far fa-star text-base"></i>
-          <span>/</span>
-          <span>Nombre Usuario</span>
-        </div>
-        <div class="flex items-center space-x-4 text-gray-400">
-          <div
-            class="flex items-center space-x-1 bg-gray-100 rounded-md px-3 py-1 text-xs w-48"
-          >
-            <i class="fas fa-search text-xs"></i>
-            <input
-              class="bg-transparent placeholder-gray-300 focus:outline-none w-full"
-              placeholder="Buscador"
-              type="search"
-            />
-          </div>
-          <i class="fas fa-sun text-base cursor-pointer"></i>
-          <i class="fas fa-redo-alt text-base cursor-pointer"></i>
-          <i class="far fa-bell text-base cursor-pointer"></i>
-          <i class="far fa-th-large text-base cursor-pointer"></i>
-        </div>
-      </header>
-      <!-- Reservation Request -->
-      <section
-        class="bg-gray-200 rounded-xl p-6 sm:p-8 flex flex-col w-full max-w-full sm:max-w-4xl mx-auto"
-      >
-        <div
-          class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 select-none"
-        >
-          <h2 class="font-bold text-sm text-black mb-2 sm:mb-0">
-            Solicitud de Reserva
-          </h2>
-          <button
-            aria-label="Fecha actual"
-            class="text-xs text-gray-600 font-normal flex items-center space-x-1"
-          >
-            <span>Hoy Domingo 13-04-2025</span>
-            <i class="fas fa-chevron-down text-xs"></i>
-          </button>
-        </div>
-        <form id="reservaForm" class="space-y-4 text-xs text-gray-500 font-normal" onsubmit="return false;">
-          <!-- Nombre -->
-          <div class="flex flex-col">
-            <label
-              class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
-              for="nombre"
-              >Nombre:</label
-            >
-            <input
-              class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
-              id="nombre"
-              placeholder="Ingrese su nombre completo."
-              type="text"
-            />
-          </div>
-          <!-- RUT/DNI -->
-          <div class="flex flex-col">
-            <label
-              class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
-              for="rut"
-              >RUT/DNI:</label
-            >
-            <input
-              class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
-              id="rut"
-              placeholder="Ingrese su RUT o DNI según corresponda."
-              type="text"
-            />
-          </div>
-          <!-- Dirección -->
-          <div class="flex flex-col">
-            <label
-              class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
-              for="direccion"
-              >Dirección:</label
-            >
-            <input
-              class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
-              id="direccion"
-              placeholder="Ingrese la dirección de su domicilio."
-              type="text"
-            />
-          </div>
-          <!-- Correo Electrónico -->
-          <div class="flex flex-col">
-            <label
-              class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
-              for="correo"
-              >Correo Electrónico:</label
-            >
-            <input
-              class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
-              id="correo"
-              placeholder="Ingrese su correo electrónico o mail."
-              type="email"
-            />
-          </div>
-          <!-- Adultos y Niños -->
-          <div class="flex flex-wrap gap-4">
-            <div
-              class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]"
-            >
-              <label
-                class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
-                for="adultos"
-                >Adultos:</label
-              >
-              <input
-                class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
-                id="adultos"
-                placeholder="Ingrese la cantidad de adultos."
-                type="number"
-              />
+    <div class="flex min-h-screen">
+        <!-- Left Sidebar -->
+        <aside class="w-56 border-r border-gray-200 flex flex-col px-6 py-6 select-none">
+            <div class="flex items-center space-x-2 mb-12">
+                <img alt="Icono usuario pequeño, círculo negro con fondo blanco" class="rounded-full" height="24"
+                    src="https://storage.googleapis.com/a1aa/image/5766ec36-791e-49d1-cfa4-22ddb55c38eb.jpg"
+                    width="24" />
+                <span class="text-sm">Nombre Cliente</span>
             </div>
-            <div
-              class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]"
-            >
-              <label
-                class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
-                for="ninos"
-                >Niños:</label
-              >
-              <input
-                class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
-                id="ninos"
-                placeholder="Ingrese la cantidad de niños."
-                type="number"
-              />
+            <nav class="flex flex-col space-y-6 text-gray-500 text-sm font-normal">
+                <a class="flex items-center space-x-2 hover:text-black transition-colors duration-200" href="http://127.0.0.1:8000/perfil/"><i
+                        class="fas fa-user-circle text-base"></i><span>Perfil Usuario</span></a>
+                <a class="flex items-center space-x-2 hover:text-black transition-colors duration-200" href="#"><i
+                        class="fas fa-calendar-check text-base"></i><span>Reserva Previa</span></a>
+                <a class="flex items-center space-x-2 hover:text-black transition-colors duration-200" href="#"><i
+                        class="far fa-comment-dots text-base"></i><span>Mensajes</span></a>
+            </nav>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col px-6 py-6">
+            <!-- Top bar -->
+            <header class="flex items-center justify-between text-gray-700 text-sm font-normal mb-6 select-none">
+                <div class="flex items-center space-x-3">
+                    <i class="far fa-th-large text-base"></i>
+                    <i class="far fa-star text-base"></i>
+                    <span>/</span>
+                    <span>Nombre Usuario</span>
+                </div>
+                <div class="flex items-center space-x-4 text-gray-400">
+                    <div class="flex items-center space-x-1 bg-gray-100 rounded-md px-3 py-1 text-xs w-48">
+                        <i class="fas fa-search text-xs"></i>
+                        <input class="bg-transparent placeholder-gray-300 focus:outline-none w-full"
+                            placeholder="Buscador" type="search" />
+                    </div>
+                    <i class="fas fa-sun text-base cursor-pointer"></i>
+                    <i class="fas fa-redo-alt text-base cursor-pointer"></i>
+                    <i class="far fa-bell text-base cursor-pointer"></i>
+                    <i class="far fa-th-large text-base cursor-pointer"></i>
+                </div>
+            </header>
+            <!-- Reservation Request -->
+            <section class="bg-gray-200 rounded-xl p-6 sm:p-8 flex flex-col w-full max-w-full sm:max-w-4xl mx-auto">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 select-none">
+                    <h2 class="font-bold text-sm text-black mb-2 sm:mb-0">
+                        Solicitud de Reserva
+                    </h2>
+                    <button aria-label="Fecha actual"
+                        class="text-xs text-gray-600 font-normal flex items-center space-x-1">
+                        <span>Hoy Domingo 13-04-2025</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                </div>
+                <form id="reservaForm" class="space-y-4 text-xs text-gray-500 font-normal" onsubmit="return false;">
+                    <!-- Nombre -->
+                    <div class="flex flex-col">
+                        <label class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+                            for="nombre">Nombre:</label>
+                        <input
+                            class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                            id="nombre" placeholder="Ingrese su nombre completo." type="text" />
+                    </div>
+                    <!-- RUT/DNI -->
+                    <div class="flex flex-col">
+                        <label class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+                            for="rut">RUT/DNI:</label>
+                        <input
+                            class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                            id="rut" placeholder="Ingrese su RUT o DNI según corresponda." type="text" />
+                    </div>
+                    <!-- Dirección -->
+                    <div class="flex flex-col">
+                        <label class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+                            for="direccion">Dirección:</label>
+                        <input
+                            class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                            id="direccion" placeholder="Ingrese la dirección de su domicilio." type="text" />
+                    </div>
+                    <!-- Correo Electrónico -->
+                    <div class="flex flex-col">
+                        <label class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+                            for="correo">Correo Electrónico:</label>
+                        <input
+                            class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                            id="correo" placeholder="Ingrese su correo electrónico o mail." type="email" />
+                    </div>
+                    <!-- Adultos y Niños -->
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]">
+                            <label
+                                class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+                                for="adultos">Adultos:</label>
+                            <input
+                                class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                                id="adultos" placeholder="Ingrese la cantidad de adultos." type="number" />
+                        </div>
+                        <div class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]">
+                            <label
+                                class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+                                for="ninos">Niños:</label>
+                            <input
+                                class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                                id="ninos" placeholder="Ingrese la cantidad de niños." type="number" />
+                        </div>
+                    </div>
+                    <!-- Mascota y Asistencia -->
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]">
+                            <label
+                                class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+                                for="mascota">Mascota:</label>
+                            <input
+                                class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                                id="mascota" placeholder="Ingrese la Raza de mascota." type="text" />
+                        </div>
+                        <div class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]">
+                            <label
+                                class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+                                for="asistencia">Es de asistencia?</label>
+                            <input
+                                class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                                id="asistencia" placeholder="Indique la razón de asistencia" type="text" />
+                        </div>
+                    </div>
+                    <!-- Observaciones -->
+                    <div class="flex flex-col">
+                        <label class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
+                            for="observaciones">Observaciones:</label>
+                        <textarea
+                            class="rounded-2xl px-4 py-3 text-xs text-gray-400 placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-gray-300"
+                            id="observaciones"
+                            placeholder="Ingrese sus requerimientos especiales como alergias o condiciones especiales que tiene algunas de las personas."
+                            rows="4"></textarea>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="flex flex-col sm:flex-row justify-between mt-6 gap-4 sm:gap-0">
+                        <button id="cancelBtn"
+                            class="bg-red-600 text-white px-8 py-2 rounded-full shadow-md hover:bg-red-700 transition-colors duration-200 w-full sm:w-auto"
+                            type="button">
+                            Cancelar
+                        </button>
+                        <button id="confirmBtn"
+                            class="bg-green-400 text-black px-8 py-2 rounded-full shadow-md hover:bg-green-500 transition-colors duration-200 w-full sm:w-auto"
+                            type="button">
+                            Confirmar
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <!-- Right Sidebar -->
+        <aside class="w-56 border-l border-gray-200 px-6 py-6 text-xs text-gray-700 select-none hidden lg:block">
+            <div class="mb-6">
+                <h3 class="font-semibold text-sm mb-3">Novedades del Hotel</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-info-circle text-gray-400 mt-1"></i>
+                        <div>
+                            <p class="text-gray-900">Nuevas Actividades</p>
+                            <p class="text-gray-400 text-[10px]">actividades matutinas</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-user-tie text-gray-400 mt-1"></i>
+                        <div>
+                            <p class="text-gray-900">Nuevo Jefe de seguridad</p>
+                            <p class="text-gray-300 text-[10px]">
+                                Contamos con un nuevo jefe de seguridad para actualizar los
+                                sistemas digitales del Hotel
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-broadcast-tower text-gray-400 mt-1"></i>
+                        <div>
+                            <p class="text-gray-900">Nuevos Sistemas</p>
+                            <p class="text-gray-300 text-[10px]">
+                                Nuevos sistemas de Entretención y de Seguridad
+                            </p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-          </div>
-          <!-- Mascota y Asistencia -->
-          <div class="flex flex-wrap gap-4">
-            <div
-              class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]"
-            >
-              <label
-                class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
-                for="mascota"
-                >Mascota:</label
-              >
-              <input
-                class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
-                id="mascota"
-                placeholder="Ingrese la Raza de mascota."
-                type="text"
-              />
-            </div>
-            <div
-              class="flex flex-col flex-1 min-w-[140px] max-w-full sm:max-w-[45%]"
-            >
-              <label
-                class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
-                for="asistencia"
-                >Es de asistencia?</label
-              >
-              <input
-                class="rounded-full px-4 py-2 text-xs text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
-                id="asistencia"
-                placeholder="Indique la razón de asistencia"
-                type="text"
-              />
-            </div>
-          </div>
-          <!-- Observaciones -->
-          <div class="flex flex-col">
-            <label
-              class="font-bold text-gray-900 bg-gray-200 rounded-tl-xl rounded-tr-xl px-3 py-1 w-max"
-              for="observaciones"
-              >Observaciones:</label
-            >
-            <textarea
-              class="rounded-2xl px-4 py-3 text-xs text-gray-400 placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-gray-300"
-              id="observaciones"
-              placeholder="Ingrese sus requerimientos especiales como alergias o condiciones especiales que tiene algunas de las personas."
-              rows="4"
-            ></textarea>
-          </div>
-          <!-- Buttons -->
-          <div class="flex flex-col sm:flex-row justify-between mt-6 gap-4 sm:gap-0">
-            <button
-              id="cancelBtn"
-              class="bg-red-600 text-white px-8 py-2 rounded-full shadow-md hover:bg-red-700 transition-colors duration-200 w-full sm:w-auto"
-              type="button"
-            >
-              Cancelar
-            </button>
-            <button
-              class="bg-green-400 text-black px-8 py-2 rounded-full shadow-md hover:bg-green-500 transition-colors duration-200 w-full sm:w-auto"
-              type="submit"
-            >
-              Confirmar
-            </button>
-          </div>
-        </form>
-      </section>
-    </main>
-    <!-- Right Sidebar -->
-    <aside class="w-56 border-l border-gray-200 px-6 py-6 text-xs text-gray-700 select-none hidden lg:block">
-      <div class="mb-6">
-        <h3 class="font-semibold text-sm mb-3">Novedades del Hotel</h3>
-        <ul class="space-y-4">
-          <li class="flex items-start space-x-3">
-            <i class="fas fa-info-circle text-gray-400 mt-1"></i>
             <div>
-              <p class="text-gray-900">Nuevas Actividades</p>
-              <p class="text-gray-400 text-[10px]">actividades matutinas</p>
+                <h3 class="font-semibold text-sm mb-3">Actividades Extras</h3>
+                <ul class="space-y-3 text-gray-900">
+                    <li>
+                        <p>Paseo turistico por la ciudad</p>
+                        <p class="text-gray-400 text-[10px]">Hasta el 30 de julio</p>
+                    </li>
+                    <li>
+                        <p>Aeróbic acuatico</p>
+                        <p class="text-gray-400 text-[10px]">De Lun a Vie a las 16:00 hrs</p>
+                    </li>
+                    <li>
+                        <p>Tarde de cine</p>
+                        <p class="text-gray-400 text-[10px]">De Vie a Dom a las 22:00 hrs</p>
+                    </li>
+                    <li>
+                        <p>Cena Romantica</p>
+                        <p class="text-gray-400 text-[10px]">Sabado 2,6 de abril 22:30 hrs</p>
+                    </li>
+                    <li>
+                        <p>Aerobox Familiar</p>
+                        <p class="text-gray-400 text-[10px]">Lun a Vie 10:00 hrs</p>
+                    </li>
+                </ul>
             </div>
-          </li>
-          <li class="flex items-start space-x-3">
-            <i class="fas fa-user-tie text-gray-400 mt-1"></i>
-            <div>
-              <p class="text-gray-900">Nuevo Jefe de seguridad</p>
-              <p class="text-gray-300 text-[10px]">
-                Contamos con un nuevo jefe de seguridad para actualizar los
-                sistemas digitales del Hotel
-              </p>
-            </div>
-          </li>
-          <li class="flex items-start space-x-3">
-            <i class="fas fa-broadcast-tower text-gray-400 mt-1"></i>
-            <div>
-              <p class="text-gray-900">Nuevos Sistemas</p>
-              <p class="text-gray-300 text-[10px]">
-                Nuevos sistemas de Entretención y de Seguridad
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-semibold text-sm mb-3">Actividades Extras</h3>
-        <ul class="space-y-3 text-gray-900">
-          <li>
-            <p>Paseo turistico por la ciudad</p>
-            <p class="text-gray-400 text-[10px]">Hasta el 30 de julio</p>
-          </li>
-          <li>
-            <p>Aeróbic acuatico</p>
-            <p class="text-gray-400 text-[10px]">De Lun a Vie a las 16:00 hrs</p>
-          </li>
-          <li>
-            <p>Tarde de cine</p>
-            <p class="text-gray-400 text-[10px]">De Vie a Dom a las 22:00 hrs</p>
-          </li>
-          <li>
-            <p>Cena Romantica</p>
-            <p class="text-gray-400 text-[10px]">Sabado 2,6 de abril 22:30 hrs</p>
-          </li>
-          <li>
-            <p>Aerobox Familiar</p>
-            <p class="text-gray-400 text-[10px]">Lun a Vie 10:00 hrs</p>
-          </li>
-        </ul>
-      </div>
-    </aside>
-  </div>
-  <script>
-    document.getElementById('cancelBtn').addEventListener('click', () => {
-      const form = document.getElementById('reservaForm');
-      form.reset();
-    });
-  </script>
+        </aside>
+    </div>
+    <script>
+        document.getElementById('cancelBtn').addEventListener('click', () => {
+            const form = document.getElementById('reservaForm');
+            form.reset();
+        });
+
+        document.getElementById('confirmBtn').addEventListener('click', () => {
+            window.location.href = 'http://127.0.0.1:8000/habitaciones_disponibles/'; // Cambia esto a la URL correcta
+        });
+    </script>
 </body>
+
 </html>
