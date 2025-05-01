@@ -16,3 +16,6 @@ def habitacion(request):
 def perfil(request):    
     return render(request, 'perfil.html')   
 
+def login(request):    
+    return render(request, 'login.html')
+

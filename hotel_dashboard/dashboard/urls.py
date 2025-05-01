@@ -5,9 +5,10 @@ app_name = 'dashboard'
 
 urlpatterns = [
     
-    path('', views.hdisponibles, name='hdisponibles'),
+    path('hddisponibles', views.hdisponibles, name='hdisponibles'),
     path('habitaciones_disponibles/', views.hdisponibles, name='hdisponibles'), 
     path('reserva/', views.reserva, name='reserva'),
     path('habitacion/', views.habitacion, name='habitacion'), 
     path('perfil/', views.perfil, name='perfil'),   
+    path('', views.login, name='login'),
 ]
