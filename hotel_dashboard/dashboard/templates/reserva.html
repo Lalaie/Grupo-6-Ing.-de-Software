@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Reserva Hotel</title>
+    <title>Reserva Hotel Pasific Reef</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -17,44 +18,82 @@
 <body class="bg-white text-black">
     <div class="flex min-h-screen">
         <!-- Left Sidebar -->
-        <aside class="w-56 border-r border-gray-200 flex flex-col px-6 py-6 select-none">
-            <div class="flex items-center space-x-2 mb-12">
-                <img alt="Icono usuario pequeño, círculo negro con fondo blanco" class="rounded-full" height="24"
-                    src="https://storage.googleapis.com/a1aa/image/5766ec36-791e-49d1-cfa4-22ddb55c38eb.jpg"
+        <aside aria-label="Sidebar" class="border-r border-gray-200 w-full md:w-60 flex-shrink-0 px-4 py-6">
+            <div class="flex items-center space-x-2 mb-10">
+                <img alt="Icono de usuario pequeño, fondo azul con silueta blanca" class="rounded-full" height="24"
+                    src="https://storage.googleapis.com/a1aa/image/72b2c4a4-3287-4a8e-bf79-47aebe5c3cfd.jpg"
                     width="24" />
-                <span class="text-sm">Nombre Cliente</span>
+                <span class="text-sm text-gray-700">
+                    Nombre Cliente
+                </span>
             </div>
-            <nav class="flex flex-col space-y-6 text-gray-500 text-sm font-normal">
-                <a class="flex items-center space-x-2 hover:text-black transition-colors duration-200" href="http://127.0.0.1:8000/perfil/"><i
-                        class="fas fa-user-circle text-base"></i><span>Perfil Usuario</span></a>
-                <a class="flex items-center space-x-2 hover:text-black transition-colors duration-200" href="#"><i
-                        class="fas fa-calendar-check text-base"></i><span>Reserva Previa</span></a>
-                <a class="flex items-center space-x-2 hover:text-black transition-colors duration-200" href="#"><i
-                        class="far fa-comment-dots text-base"></i><span>Mensajes</span></a>
+            <nav class="space-y-4 text-gray-500 text-sm leading-relaxed select-none">
+                <a class="flex items-center space-x-2 w-full text-left text-gray-700 hover:text-gray-900"
+                    href="http://127.0.0.1:8000/perfil/"> <!-- Cambiado a un enlace -->
+                    <i class="fas fa-user-circle text-lg"></i>
+                    <span>
+                        Perfil Usuario
+                    </span>
+                </a>
+                <a class="flex items-center space-x-2 w-full text-left text-gray-700 hover:text-gray-900" href="#">
+                    <i class="fas fa-calendar-check text-lg"></i>
+                    <span>
+                        Reserva Previa
+                    </span>
+                </a>
+                <a class="flex items-center space-x-2 w-full text-left text-gray-700 hover:text-gray-900" href="#">
+                    <i class="fas fa-comments text-lg"></i>
+                    <span>
+                        Mensajes
+                    </span>
+                </a>
             </nav>
         </aside>
         <!-- Main Content -->
-        <main class="flex-1 flex flex-col px-6 py-6">
+        <main class="flex-1 px-4 py-6">
             <!-- Top bar -->
-            <header class="flex items-center justify-between text-gray-700 text-sm font-normal mb-6 select-none">
-                <div class="flex items-center space-x-3">
-                    <i class="far fa-th-large text-base"></i>
-                    <i class="far fa-star text-base"></i>
-                    <span>/</span>
-                    <span>Nombre Usuario</span>
+            <div class="flex flex-wrap items-center justify-between text-gray-700 text-sm mb-6 gap-2">
+                <div class="flex items-center space-x-2 flex-wrap">
+                    <button class="flex items-center space-x-1 text-gray-700 hover:text-gray-900" type="button">
+                        <i class="fas fa-book-open text-base">
+                        </i>
+                        <i class="far fa-star text-base">
+                        </i>
+                    </button>
+                    <span>
+                        /
+                    </span>
+                    <span>
+                        Nombre Usuario
+                    </span>
                 </div>
-                <div class="flex items-center space-x-4 text-gray-400">
-                    <div class="flex items-center space-x-1 bg-gray-100 rounded-md px-3 py-1 text-xs w-48">
-                        <i class="fas fa-search text-xs"></i>
-                        <input class="bg-transparent placeholder-gray-300 focus:outline-none w-full"
+                <div class="flex items-center space-x-4 text-gray-400 text-sm flex-wrap justify-center">
+                    <div class="relative">
+                        <input
+                            class="pl-8 pr-2 py-1 rounded-md bg-gray-100 text-gray-400 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-300 focus:text-gray-700"
                             placeholder="Buscador" type="search" />
+                        <i
+                            class="fas fa-search absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                        </i>
                     </div>
-                    <i class="fas fa-sun text-base cursor-pointer"></i>
-                    <i class="fas fa-redo-alt text-base cursor-pointer"></i>
-                    <i class="far fa-bell text-base cursor-pointer"></i>
-                    <i class="far fa-th-large text-base cursor-pointer"></i>
+                    <button aria-label="Modo oscuro" class="hover:text-gray-700" type="button">
+                        <i class="fas fa-sun">
+                        </i>
+                    </button>
+                    <button aria-label="Historial" class="hover:text-gray-700" type="button">
+                        <i class="fas fa-redo-alt">
+                        </i>
+                    </button>
+                    <button aria-label="Notificaciones" class="hover:text-gray-700" type="button">
+                        <i class="fas fa-bell">
+                        </i>
+                    </button>
+                    <button aria-label="Opciones" class="hover:text-gray-700" type="button">
+                        <i class="fas fa-ellipsis-v">
+                        </i>
+                    </button>
                 </div>
-            </header>
+            </div>
             <!-- Reservation Request -->
             <section class="bg-gray-200 rounded-xl p-6 sm:p-8 flex flex-col w-full max-w-full sm:max-w-4xl mx-auto">
                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 select-none">
@@ -165,64 +204,100 @@
             </section>
         </main>
         <!-- Right Sidebar -->
-        <aside class="w-56 border-l border-gray-200 px-6 py-6 text-xs text-gray-700 select-none hidden lg:block">
-            <div class="mb-6">
-                <h3 class="font-semibold text-sm mb-3">Novedades del Hotel</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-start space-x-3">
-                        <i class="fas fa-info-circle text-gray-400 mt-1"></i>
-                        <div>
-                            <p class="text-gray-900">Nuevas Actividades</p>
-                            <p class="text-gray-400 text-[10px]">actividades matutinas</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-3">
-                        <i class="fas fa-user-tie text-gray-400 mt-1"></i>
-                        <div>
-                            <p class="text-gray-900">Nuevo Jefe de seguridad</p>
-                            <p class="text-gray-300 text-[10px]">
-                                Contamos con un nuevo jefe de seguridad para actualizar los
-                                sistemas digitales del Hotel
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-3">
-                        <i class="fas fa-broadcast-tower text-gray-400 mt-1"></i>
-                        <div>
-                            <p class="text-gray-900">Nuevos Sistemas</p>
-                            <p class="text-gray-300 text-[10px]">
-                                Nuevos sistemas de Entretención y de Seguridad
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-semibold text-sm mb-3">Actividades Extras</h3>
-                <ul class="space-y-3 text-gray-900">
-                    <li>
-                        <p>Paseo turistico por la ciudad</p>
-                        <p class="text-gray-400 text-[10px]">Hasta el 30 de julio</p>
-                    </li>
-                    <li>
-                        <p>Aeróbic acuatico</p>
-                        <p class="text-gray-400 text-[10px]">De Lun a Vie a las 16:00 hrs</p>
-                    </li>
-                    <li>
-                        <p>Tarde de cine</p>
-                        <p class="text-gray-400 text-[10px]">De Vie a Dom a las 22:00 hrs</p>
-                    </li>
-                    <li>
-                        <p>Cena Romantica</p>
-                        <p class="text-gray-400 text-[10px]">Sabado 2,6 de abril 22:30 hrs</p>
-                    </li>
-                    <li>
-                        <p>Aerobox Familiar</p>
-                        <p class="text-gray-400 text-[10px]">Lun a Vie 10:00 hrs</p>
-                    </li>
-                </ul>
-            </div>
-        </aside>
+         <!-- Right Sidebar -->
+   <aside aria-label="Novedades y actividades" class="border-l border-gray-200 w-full md:w-60 flex-shrink-0 px-4 py-6 text-xs text-gray-700">
+    <section class="mb-8">
+     <h3 class="font-semibold mb-3 text-sm text-gray-900">
+      Novedades del Hotel
+     </h3>
+     <ul class="space-y-4">
+      <li class="flex space-x-3">
+       <i class="fas fa-info-circle text-blue-600 mt-1">
+       </i>
+       <div>
+        <p class="font-semibold text-gray-900 leading-tight">
+         Nuevas Actividades
+        </p>
+        <p class="text-gray-400 leading-tight">
+         actividades matutinas en el gimnasio y en la piscina
+        </p>
+       </div>
+      </li>
+      <li class="flex space-x-3">
+       <i class="fas fa-user-shield text-blue-600 mt-1">
+       </i>
+       <div>
+        <p class="font-semibold text-gray-900 leading-tight">
+         Nuevo Jefe de seguridad
+        </p>
+        <p class="text-gray-400 leading-tight">
+         Contamos con un nuevo jefe de seguridad para actualizar los
+                sistemas digitales del Hotel
+        </p>
+       </div>
+      </li>
+      <li class="flex space-x-3">
+       <i class="fas fa-broadcast-tower text-gray-400 mt-1">
+       </i>
+       <div>
+        <p class="font-semibold text-gray-400 leading-tight">
+         Nuevos Sistemas
+        </p>
+        <p class="text-gray-400 leading-tight">
+         Nuevos sistemas de Entretención y de Seguridad
+        </p>
+       </div>
+      </li>
+     </ul>
+    </section>
+    <section>
+     <h3 class="font-semibold mb-3 text-sm text-gray-900">
+      Actividades Extras
+     </h3>
+     <ul class="space-y-4 text-gray-700">
+      <li>
+       <p class="font-semibold leading-tight">
+        Paseo turistico por la ciudad
+       </p>
+       <p class="text-gray-400 leading-tight">
+        Hasta el 30 de julio
+       </p>
+      </li>
+      <li>
+       <p class="font-semibold leading-tight">
+        Aeróbic acuatico
+       </p>
+       <p class="text-gray-400 leading-tight">
+        De Lun a Vie a las 16:00 hrs
+       </p>
+      </li>
+      <li>
+       <p class="font-semibold leading-tight">
+        Tarde de cine
+       </p>
+       <p class="text-gray-400 leading-tight">
+        De Vie a Dom a las 22:00 hrs
+       </p>
+      </li>
+      <li>
+       <p class="font-semibold leading-tight">
+        Cena Romantica
+       </p>
+       <p class="text-gray-400 leading-tight">
+        Sabado 26 de abril 22:30 hrs
+       </p>
+      </li>
+      <li>
+       <p class="font-semibold leading-tight">
+        Aerobox Familiar
+       </p>
+       <p class="text-gray-400 leading-tight">
+        Lun a Vie 10:00 hrs
+       </p>
+      </li>
+     </ul>
+    </section>
+   </aside>
     </div>
     <script>
         document.getElementById('cancelBtn').addEventListener('click', () => {
