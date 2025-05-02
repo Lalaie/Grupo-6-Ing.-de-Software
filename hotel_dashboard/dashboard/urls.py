@@ -10,5 +10,9 @@ urlpatterns = [
     path('reserva/', views.reserva, name='reserva'),
     path('habitacion/', views.habitacion, name='habitacion'), 
     path('perfil/', views.perfil, name='perfil'),   
-    path('', views.login, name='login'),
+    path('', views.login, name='login'),    
+    path('index/', views.index, name='index'),  
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('empleados/', views.empleados, name='empleados'),  
+    path('habitaciones/', views.habitaciones, name='habitaciones'),
 ]

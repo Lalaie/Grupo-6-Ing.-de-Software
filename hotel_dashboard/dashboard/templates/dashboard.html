@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/css/dashboard.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-700 min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="flex items-center space-x-2 mb-10">
+            <div
+                class="w-7 h-7 rounded-full bg-gradient-to-tr from-gray-700 to-gray-900 flex items-center justify-center text-white text-xs">
+                <i class="fas fa-user"></i>
+            </div>
+            <span class="text-sm font-medium text-gray-900">Admin - Nombre</span>
+        </div>
+        <nav class="nav">
+            <a class="nav-item active" href="http://127.0.0.1:8000/dashboard/">
+                <i class="fas fa-chart-pie text-base"></i>
+                <span>Vista Previa</span>
+            </a>
+            <a class="nav-item" href="#">
+                <i class="far fa-id-card text-base"></i>
+                <span>Perfil de Usuario</span>
+            </a>
+            <a class="nav-item" href="http://127.0.0.1:8000/empleados/">
+                <i class="fas fa-users text-base"></i>
+                <span>Empleados</span>
+            </a>
+            <a class="nav-item" href="#">
+                <i class="fas fa-user-friends text-base"></i>
+                <span>Reservas</span>
+            </a>
+            <a class="nav-item" href="http://127.0.0.1:8000/habitraciones/">
+                <i class="fas fa-list-ul text-base"></i>
+                <span>Habitaciones</span>
+            </a>
+            <a class="nav-item" href="#">
+                <i class="far fa-comment text-base"></i>
+                <span>Mensajes</span>
+            </a>
+            <a class="nav-item" href="#">
+                <i class="far fa-calendar-alt text-base"></i>
+                <span>Calendario</span>
+            </a>
+            <a class="nav-item" href="#">
+                <i class="far fa-credit-card text-base"></i>
+                <span>Finanzas</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 flex flex-col min-h-screen overflow-auto">
+        <!-- Top bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <i class="fas fa-th-large text-base text-gray-700"></i>
+                <i class="far fa-star text-base text-gray-700"></i>
+                <span class="text-gray-400">Dashboards</span>
+                <span>/</span>
+                <span class="text-gray-900 font-semibold">Nombre Usuario</span>
+            </div>
+            <div class="top-bar-right">
+                <div class="search-box">
+                    <input class="search-input" placeholder="    Buscador" type="text" />
+                    <i class="fas fa-search absolute left-2 top-1.5 text-xs"></i>
+                    <i class="fas fa-caret-down absolute right-2 top-1.5 text-xs"></i>
+                </div>
+                <button aria-label="Toggle dark mode" class="icon-button">
+                    <i class="fas fa-sun text-base"></i>
+                </button>
+                <button aria-label="Undo" class="icon-button">
+                    <i class="fas fa-undo text-base"></i>
+                </button>
+                <button aria-label="Notifications" class="icon-button relative">
+                    <i class="far fa-bell text-base"></i>
+                    <span class="notification-dot"></span>
+                </button>
+                <button aria-label="Toggle sidebar" class="icon-button">
+                    <i class="fas fa-th-large text-base"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <section class="content">
+            <!-- Vista Previa header -->
+            <div class="flex justify-between items-center mb-4 select-none">
+                <h2 class="text-xs font-semibold text-gray-900">Vista Previa</h2>
+                <button class="text-xs text-gray-500 flex items-center space-x-1">
+                    <span>Hoy Domingo 13-04-2025</span>
+                    <i class="fas fa-chevron-down text-[10px]"></i>
+                </button>
+            </div>
+
+          <!-- Stats cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-blue-50 rounded-lg p-4 select-none">
+         <p class="text-xs text-gray-600 mb-1">
+          Reservas
+         </p>
+         <div class="flex items-center space-x-2">
+          <span class="text-2xl font-bold text-gray-900">
+           6
+          </span>
+          <span class="text-[9px] text-gray-500 flex items-center space-x-0.5">
+           <span>
+            +11.01%
+           </span>
+           <i class="fas fa-arrow-up text-[10px]">
+           </i>
+          </span>
+         </div>
+        </div>
+        <div class="bg-blue-100 rounded-lg p-4 select-none">
+         <p class="text-xs text-gray-600 mb-1">
+          Check -in
+         </p>
+         <div class="flex items-center space-x-2">
+          <span class="text-2xl font-bold text-gray-900">
+           30
+          </span>
+          <span class="text-[9px] text-gray-500 flex items-center space-x-0.5">
+           <span>
+            -0.03%
+           </span>
+           <i class="fas fa-arrow-up text-[10px]">
+           </i>
+          </span>
+         </div>
+        </div>
+        <div class="bg-blue-50 rounded-lg p-4 select-none">
+         <p class="text-xs text-gray-600 mb-1">
+          Check -out
+         </p>
+         <div class="flex items-center space-x-2">
+          <span class="text-2xl font-bold text-gray-900">
+           1
+          </span>
+          <span class="text-[9px] text-gray-500 flex items-center space-x-0.5">
+           <span>
+            +15.03%
+           </span>
+           <i class="fas fa-arrow-up text-[10px]">
+           </i>
+          </span>
+         </div>
+        </div>
+        <div class="bg-blue-100 rounded-lg p-4 select-none">
+         <p class="text-xs text-gray-600 mb-1">
+          Hab. Disponibles
+         </p>
+         <div class="flex items-center space-x-2">
+          <span class="text-2xl font-bold text-gray-900">
+           28
+          </span>
+          <span class="text-[9px] text-gray-500 flex items-center space-x-0.5">
+           <span>
+            +6.08%
+           </span>
+           <i class="fas fa-arrow-up text-[10px]">
+           </i>
+          </span>
+         </div>
+        </div>
+       </div>
+       <!-- Graph and traffic -->
+       <div class="flex flex-col md:flex-row gap-4 mb-6 select-none">
+        <div class="flex-1 bg-gray-50 rounded-lg p-6">
+         <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xs font-semibold text-gray-900">
+           Total Ingresos
+          </h3>
+          <div class="flex items-center space-x-3 text-[9px] text-gray-500">
+           <div class="flex items-center space-x-1">
+            <span class="w-2 h-2 rounded-full bg-gray-900 block">
+            </span>
+            <span>
+             Este año
+            </span>
+           </div>
+           <div class="flex items-center space-x-1">
+            <span class="w-2 h-2 rounded-full bg-blue-300 block">
+            </span>
+            <span>
+             Último año
+            </span>
+           </div>
+          </div>
+         </div>
+         <div class="placeholder-box">
+          Gráfico Total Ingresos Aquí
+         </div>
+        </div>
+        <div class="w-full md:w-64 bg-gray-50 rounded-lg p-6">
+         <h3 class="text-xs font-semibold text-gray-900 mb-4 select-none">
+          Tráfico Web
+         </h3>
+         <div class="flex flex-col space-y-3 text-[10px] text-gray-700">
+          <div class="flex justify-between items-center">
+           <span>
+            Google
+           </span>
+           <div class="w-20 h-1 bg-gray-300 rounded">
+            <div class="w-10 h-1 bg-gray-900 rounded">
+            </div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center">
+           <span>
+            YouTube
+           </span>
+           <div class="w-20 h-1 bg-gray-300 rounded">
+            <div class="w-12 h-1 bg-gray-900 rounded">
+            </div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center">
+           <span>
+            Instagram
+           </span>
+           <div class="w-20 h-1 bg-gray-300 rounded">
+            <div class="w-8 h-1 bg-gray-900 rounded">
+            </div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center">
+           <span>
+            Pinterest
+           </span>
+           <div class="w-20 h-1 bg-gray-300 rounded">
+            <div class="w-14 h-1 bg-gray-900 rounded">
+            </div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center">
+           <span>
+            Facebook
+           </span>
+           <div class="w-20 h-1 bg-gray-300 rounded">
+            <div class="w-10 h-1 bg-gray-900 rounded">
+            </div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center">
+           <span>
+            Twitter
+           </span>
+           <div class="w-20 h-1 bg-gray-300 rounded">
+            <div class="w-12 h-1 bg-gray-900 rounded">
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!-- Bottom cards -->
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 select-none">
+        <div class="bg-gray-50 rounded-lg p-6">
+         <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xs font-semibold text-gray-900">
+           Reservas
+          </h3>
+          <button class="text-xs text-gray-500 flex items-center space-x-1">
+           <span>
+            Último Mes
+           </span>
+           <i class="fas fa-chevron-down text-[10px]">
+           </i>
+          </button>
+         </div>
+         <div class="placeholder-box">
+          Gráfico Reservas Aquí
+         </div>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-6">
+         <h3 class="text-xs font-semibold text-gray-900 mb-4">
+          Calificación General
+         </h3>
+         <div class="flex items-center space-x-6">
+          <div class="placeholder-box-small w-28 h-28 flex-shrink-0">
+           Gráfico Circular Aquí
+          </div>
+          <ul class="text-[10px] text-gray-700 space-y-2">
+           <li class="flex items-center space-x-2">
+            <span class="w-3 h-3 rounded-full bg-black block">
+            </span>
+            <span>
+             Disponibilidad
+            </span>
+            <span class="ml-auto font-semibold text-gray-900">
+             52.1%
+            </span>
+           </li>
+           <li class="flex items-center space-x-2">
+            <span class="w-3 h-3 rounded-full bg-blue-400 block">
+            </span>
+            <span>
+             Limpieza
+            </span>
+            <span class="ml-auto font-semibold text-gray-900">
+             22.8%
+            </span>
+           </li>
+           <li class="flex items-center space-x-2">
+            <span class="w-3 h-3 rounded-full bg-green-300 block">
+            </span>
+            <span>
+             Ubicación
+            </span>
+            <span class="ml-auto font-semibold text-gray-900">
+             13.9%
+            </span>
+           </li>
+           <li class="flex items-center space-x-2">
+            <span class="w-3 h-3 rounded-full bg-blue-200 block">
+            </span>
+            <span>
+             Otros
+            </span>
+            <span class="ml-auto font-semibold text-gray-900">
+             11.2%
+            </span>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+        </section>
+    </main>
+
+    <!-- Right sidebar -->
+    <aside class="w-60 border-l border-gray-200 px-6 py-6 flex flex-col space-y-6 text-xs text-gray-700 select-none">
+        <div>
+            <h4 class="font-semibold text-gray-900 mb-3">
+                Alertas
+            </h4>
+            <ul class="space-y-4">
+                <li class="flex items-start space-x-3">
+                    <div
+                        class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs">
+                        <i class="fas fa-exclamation-circle">
+                        </i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-900 leading-none">
+                            Nueva solicitud
+                        </p>
+                        <p class="text-gray-400 leading-none">
+                            Ahora
+                        </p>
+                    </div>
+                </li>
+                <li class="flex items-start space-x-3">
+                    <div
+                        class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs">
+                        <i class="fas fa-user">
+                        </i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-900 leading-none">
+                            Nuevo usuario Registrado
+                        </p>
+                        <p class="text-gray-400 leading-none">
+                            Hace 40 minutos atrás
+                        </p>
+                    </div>
+                </li>
+                <li class="flex items-start space-x-3">
+                    <div
+                        class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs">
+                        <i class="fas fa-broom">
+                        </i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-900 leading-none">
+                            Limpieza dormitorio 320
+                        </p>
+                        <p class="text-gray-400 leading-none">
+                            Ahora
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-semibold text-gray-900 mb-3">
+                Actividades diarias
+            </h4>
+            <ul class="space-y-4">
+                <li class="flex items-center space-x-3">
+                    <img alt="Avatar circular con letras AC para actividad Nuevo Cliente"
+                        class="w-6 h-6 rounded-full object-cover" height="24"
+                        src="https://storage.googleapis.com/a1aa/image/2b78f9d9-e480-43ad-71a5-6a4f81788868.jpg"
+                        width="24" />
+                    <div>
+                        <p class="font-semibold text-gray-900 leading-none">
+                            Nuevo Cliente
+                        </p>
+                        <p class="text-gray-400 leading-none">
+                            Justo ahora
+                        </p>
+                    </div>
+                </li>
+                <li class="flex items-center space-x-3">
+                    <img alt="Avatar circular con letras IC para actividad Ingreso nueva camarera"
+                        class="w-6 h-6 rounded-full object-cover" height="24"
+                        src="https://storage.googleapis.com/a1aa/image/45b9be4f-270d-4982-aedd-aee9fac17068.jpg"
+                        width="24" />
+                    <div>
+                        <p class="font-semibold text-gray-900 leading-none">
+                            Ingreso nueva camarera
+                        </p>
+                        <p class="text-gray-400 leading-none">
+                            Hace 32 min
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-semibold text-gray-900 mb-3">
+                Trabajadores
+            </h4>
+            <ul class="space-y-4">
+                <li class="flex items-center space-x-3">
+                    <img alt="Avatar circular con letras NC para trabajadora Natalia Castro"
+                        class="w-6 h-6 rounded-full object-cover" height="24"
+                        src="https://storage.googleapis.com/a1aa/image/364db649-8324-4348-d3fc-f8dcdfc29a92.jpg"
+                        width="24" />
+                    <span class="text-gray-900 font-normal">
+                        Natalia Castro
+                    </span>
+                </li>
+                <li class="flex items-center space-x-3">
+                    <img alt="Avatar circular con letras HF para trabajador Hernan Figeroa"
+                        class="w-6 h-6 rounded-full object-cover" height="24"
+                        src="https://storage.googleapis.com/a1aa/image/9b5bccad-8d8f-4987-9245-e983b5ce3af3.jpg"
+                        width="24" />
+                    <span class="text-gray-900 font-normal">
+                        Hernan Figeroa
+                    </span>
+                </li>
+                <li class="flex items-center space-x-3">
+                    <img alt="Avatar circular con letras AB para trabajadora Andrea Bustamante"
+                        class="w-6 h-6 rounded-full object-cover" height="24"
+                        src="https://storage.googleapis.com/a1aa/image/35bf4d97-41bd-4bb3-36e5-bf0934da2ef7.jpg"
+                        width="24" />
+                    <span class="text-gray-900 font-normal">
+                        Andrea Bustamante
+                    </span>
+                </li>
+                <li class="flex items-center space-x-3">
+                    <img alt="Avatar circular con letras MR para trabajador Miguel ROjas"
+                        class="w-6 h-6 rounded-full object-cover" height="24"
+                        src="https://storage.googleapis.com/a1aa/image/83b0076f-af2b-43c2-354f-dccd3e81ef6e.jpg"
+                        width="24" />
+                    <span class="text-gray-900 font-normal">
+                        Miguel ROjas
+                    </span>
+                </li>
+                <li class="flex items-center space-x-3">
+                    <img alt="Avatar circular con letras PV para trabajadora Pamela Veliz"
+                        class="w-6 h-6 rounded-full object-cover" height="24"
+                        src="https://storage.googleapis.com/a1aa/image/f4a7cd2e-965b-4bd1-e2fe-6de5cfc9f6ca.jpg"
+                        width="24" />
+                    <span class="text-gray-900 font-normal">
+                        Pamela Veliz
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </aside>
+</body>
+
+</html>
