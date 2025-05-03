@@ -31,3 +31,6 @@ def empleados(request):
 def habitaciones(request):   
     return render(request, 'habitaciones.html')
 
+def editar_habitacion(request):   
+    return render(request, 'editar_habitacion.html')
+

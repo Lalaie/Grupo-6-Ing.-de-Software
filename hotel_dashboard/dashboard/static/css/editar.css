@@ -1,0 +1,250 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.sidebar {
+  width: 15rem;
+  border-right: 1px solid #e5e7eb;
+  padding: 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  user-select: none;
+}
+
+.sidebar > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.nav-item i {
+  font-size: 1.125rem;
+}
+
+.nav-item:hover {
+  color: #111827;
+}
+
+.nav-item.active {
+  color: #111827;
+  font-weight: 600;
+}
+
+.nav-item.active i {
+  color: #111827;
+}
+
+.user-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(to top right, #374151, #111827);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+}
+
+/* Header styles */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  user-select: none;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.top-bar-left span {
+  user-select: text;
+}
+
+.top-bar-left .text-gray-400 {
+  color: #9ca3af;
+}
+
+.top-bar-left .text-gray-900 {
+  color: #111827;
+  font-weight: 600;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  font-size: 0.875rem;
+  color: #6b7280;
+  width: 9rem;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4a6cf7;
+  color: #111827;
+}
+
+.search-box i {
+  position: absolute;
+  top: 0.375rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.search-box i.fa-search {
+  left: 0.5rem;
+  pointer-events: none;
+}
+
+.search-box i.fa-caret-down {
+  right: 0.5rem;
+  pointer-events: none;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  color: #374151;
+  transition: background-color 0.2s;
+  position: relative;
+  font-size: 1.125rem;
+}
+
+.icon-button:hover {
+  background-color: #f3f4f6;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #ef4444;
+  border-radius: 9999px;
+  border: 2px solid white;
+}
+
+/* Right sidebar styles */
+.right-sidebar {
+  width: 15rem;
+  border-left: 1px solid #e5e7eb;
+  padding: 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  color: #374151;
+  user-select: none;
+}
+
+.right-sidebar h4 {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.right-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.right-sidebar li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.right-sidebar li:last-child {
+  margin-bottom: 0;
+}
+
+.right-sidebar li div:first-child {
+  flex-shrink: 0;
+}
+
+.right-sidebar li div:first-child i {
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+.right-sidebar li div:first-child img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
+.right-sidebar li div:last-child p {
+  margin: 0;
+  line-height: 1rem;
+}
+
+.right-sidebar li div:last-child p.font-semibold {
+  font-weight: 600;
+  color: #111827;
+}
+
+.right-sidebar li div:last-child p.text-gray-400 {
+  color: #9ca3af;
+}
+
+.right-sidebar li.hoverable:hover {
+  background-color: #f3f4f6;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.right-sidebar li.hoverable {
+  padding: 0.25rem;
+  transition: background-color 0.15s;
+}
