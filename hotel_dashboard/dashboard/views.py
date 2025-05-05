@@ -34,3 +34,6 @@ def habitaciones(request):
 def editar_habitacion(request):   
     return render(request, 'editar_habitacion.html')
 
+def nueva_habitacion(request):   
+    return render(request, 'nueva_habitacion.html')
+

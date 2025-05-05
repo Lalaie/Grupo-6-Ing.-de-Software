@@ -1,0 +1,281 @@
+<html lang="es">
+{% load static %}
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Habitaciones / Nueva Habitación</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/nueva_habitacion.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-700 min-h-screen flex flex-col md:flex-row">
+    <div class="flex flex-1 overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="flex flex-col w-56 border-r border-gray-200 bg-white select-none px-4 py-6">
+            <div class="flex items-center gap-2 mb-8">
+                <div
+                    class="w-7 h-7 rounded-full bg-gradient-to-tr from-gray-700 to-gray-900 flex items-center justify-center text-white text-xs">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="text-sm font-normal select-text">Admin - Nombre</span>
+            </div>
+            <nav class="flex flex-col space-y-2 text-xs font-normal text-gray-500" role="navigation"
+                aria-label="Main navigation">
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150">
+                    <i class="fas fa-chart-pie text-sm"></i>
+                    <span>Vista Previa</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150">
+                    <i class="far fa-id-card text-sm"></i>
+                    <span>Perfil de Usuario</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150">
+                    <i class="fas fa-users text-sm"></i>
+                    <span>Empleados</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150">
+                    <i class="fas fa-user-friends text-sm"></i>
+                    <span>Reservas</span>
+                </a>
+                <a href="#" aria-current="page"
+                    class="flex items-center gap-3 px-3 py-2 rounded bg-gray-200 text-gray-900 font-semibold cursor-default select-none">
+                    <i class="fas fa-list-ul text-sm"></i>
+                    <span>Habitaciones</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150">
+                    <i class="far fa-comment text-sm"></i>
+                    <span>Mensajes</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150">
+                    <i class="far fa-calendar-alt text-sm"></i>
+                    <span>Calendario</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150">
+                    <i class="far fa-credit-card text-sm"></i>
+                    <span>Finanzas</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="flex-1 flex flex-col bg-white overflow-auto p-4">
+            <!-- Top bar -->
+            <header class="flex justify-between items-center mb-4 text-xs text-gray-400 select-none">
+                <div class="flex items-center gap-2 whitespace-nowrap">
+                    <i class="fas fa-th-large text-base text-gray-600"></i>
+                    <i class="far fa-star text-base text-gray-600"></i>
+                    <span>Dashboards</span>
+                    <span>/</span>
+                    <span class="text-gray-900 font-semibold">Habitaciones / Nueva Habitación</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative text-gray-300">
+                        <input type="search" placeholder="Buscador"
+                            class="pl-8 pr-3 py-1 rounded-full bg-gray-100 text-xs text-gray-300 placeholder:text-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:text-gray-900" />
+                        <i
+                            class="fas fa-search absolute left-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none"></i>
+                    </div>
+                    <button aria-label="Modo oscuro" class="text-gray-400 hover:text-gray-600 transition">
+                        <i class="far fa-sun text-base"></i>
+                    </button>
+                    <button aria-label="Historial" class="text-gray-400 hover:text-gray-600 transition">
+                        <i class="fas fa-undo text-base"></i>
+                    </button>
+                    <button aria-label="Notificaciones" class="text-gray-400 hover:text-gray-600 transition relative">
+                        <i class="far fa-bell text-base"></i>
+                        <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </button>
+                    <button aria-label="Ventanas" class="text-gray-400 hover:text-gray-600 transition">
+                        <i class="far fa-window-restore text-base"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <section class="flex flex-col gap-4 flex-1 bg-gray-100 rounded-xl p-4 select-text">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold text-black">Nombre de habitación</span>
+                    <button type="button"
+                        class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded px-4 py-2">
+                        Guardar
+                        <i class="fas fa-save text-lg"></i>
+                    </button>
+                </div>
+
+                <div
+                    class="bg-gray-50 rounded-xl shadow-md h-48 md:h-64 flex justify-center items-center border border-gray-200">
+                    <button aria-label="Agregar imagen de habitación" type="button"
+                        class="flex flex-col items-center justify-center gap-1 text-gray-700 text-2xl">
+                        <i class="fas fa-camera"></i>
+                        <i class="fas fa-plus text-base"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-6 shadow-md relative min-h-[220px] text-xs leading-5">
+                        <div class="absolute top-4 right-4 flex gap-3 text-gray-700 text-lg cursor-pointer select-none">
+                            <button aria-label="Editar" class="hover:text-black" type="button">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button aria-label="Agregar" class="hover:text-black" type="button">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+                        </div>
+                        <p class="mb-1"><b>Piso:</b></p>
+                        <p class="mb-1"><b>Orientación:</b></p>
+                        <p class="mb-1"><b>Cama:</b></p>
+                        <p class="mb-1"><b>Televisión:</b></p>
+                        <p class="mb-1"><b>Telecable:</b></p>
+                        <p class="mb-1"><b>Wifi:</b></p>
+                        <p class="mb-1"><b>Baño Privado:</b></p>
+                        <p class="mb-1"><b>Bañera Hidromasaje:</b></p>
+                        <p class="mb-1"><b>Escritorio Equipado:</b></p>
+                        <p class="mb-1"><b>Climatización:</b></p>
+                        <p class="mb-1"><b>Cocina:</b></p>
+                        <p class="mb-1"><b>Comedor:</b></p>
+                        <p><b>Estacionamiento:</b></p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-md min-h-[220px] text-xs leading-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <p class="underline font-semibold mb-0">Valoraciones</p>
+                        </div>
+                        <div class="bg-gray-300 rounded-lg p-3 mb-4 max-w-[280px] break-words">
+                            <p class="font-semibold underline mb-1">Nombre Usuario:</p>
+                            <p>Comentario sobre reserva</p>
+                        </div>
+                        <div class="bg-gray-300 rounded-lg p-3 mb-4 max-w-[280px] break-words">
+                            <p class="font-semibold underline mb-1">Nombre Usuario:</p>
+                            <p>Comentario sobre reserva</p>
+                        </div>
+                        <div class="bg-gray-300 rounded-lg p-3 max-w-[280px] break-words">
+                            <p class="font-semibold underline mb-1">Nombre Usuario:</p>
+                            <p>Comentario sobre reserva</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right sidebar -->
+        <aside
+            class="w-60 border-l border-gray-200 px-6 py-6 flex flex-col space-y-6 text-xs text-gray-700 select-none overflow-y-auto">
+            <div>
+                <h4 class="font-semibold mb-2">Alertas</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-start space-x-3">
+                        <div
+                            class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900 leading-none">Nueva solicitud</p>
+                            <p class="text-gray-400 leading-none">Ahora</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <div
+                            class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900 leading-none">Nuevo usuario Registrado</p>
+                            <p class="text-gray-400 leading-none">Hace 40 minutos atrás</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <div
+                            class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900 leading-none">Limpieza dormitorio 320</p>
+                            <p class="text-gray-400 leading-none">Ahora</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Actividades diarias</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-center space-x-3">
+                        <img alt="Avatar circular con letras AC para actividad Nuevo Cliente"
+                            class="w-6 h-6 rounded-full object-cover" height="24"
+                            src="https://storage.googleapis.com/a1aa/image/2b78f9d9-e480-43ad-71a5-6a4f81788868.jpg"
+                            width="24" />
+                        <div>
+                            <p class="font-semibold text-gray-900 leading-none">Nuevo Cliente</p>
+                            <p class="text-gray-400 leading-none">Justo ahora</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <img alt="Avatar circular con letras IC para actividad Ingreso nueva camarera"
+                            class="w-6 h-6 rounded-full object-cover" height="24"
+                            src="https://storage.googleapis.com/a1aa/image/45b9be4f-270d-4982-aedd-aee9fac17068.jpg"
+                            width="24" />
+                        <div>
+                            <p class="font-semibold text-gray-900 leading-none">Ingreso nueva camarera</p>
+                            <p class="text-gray-400 leading-none">Hace 32 min</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Trabajadores</h4>
+                <ul class="space-y-3">
+                    <li
+                        class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-1 cursor-pointer transition-colors duration-150">
+                        <img alt="Avatar circular con letras NC para trabajadora Natalia Castro"
+                            class="w-6 h-6 rounded-full object-cover" height="24"
+                            src="https://storage.googleapis.com/a1aa/image/364db649-8324-4348-d3fc-f8dcdfc29a92.jpg"
+                            width="24" />
+                        <span class="text-gray-900 font-normal">Natalia Castro</span>
+                    </li>
+                    <li
+                        class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-1 cursor-pointer transition-colors duration-150">
+                        <img alt="Avatar circular con letras HF para trabajador Hernan Figeroa"
+                            class="w-6 h-6 rounded-full object-cover" height="24"
+                            src="https://storage.googleapis.com/a1aa/image/9b5bccad-8d8f-4987-9245-e983b5ce3af3.jpg"
+                            width="24" />
+                        <span class="text-gray-900 font-normal">Hernan Figeroa</span>
+                    </li>
+                    <li
+                        class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-1 cursor-pointer transition-colors duration-150">
+                        <img alt="Avatar circular con letras AB para trabajadora Andrea Bustamante"
+                            class="w-6 h-6 rounded-full object-cover" height="24"
+                            src="https://storage.googleapis.com/a1aa/image/35bf4d97-41bd-4bb3-36e5-bf0934da2ef7.jpg"
+                            width="24" />
+                        <span class="text-gray-900 font-normal">Andrea Bustamante</span>
+                    </li>
+                    <li
+                        class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-1 cursor-pointer transition-colors duration-150">
+                        <img alt="Avatar circular con letras MR para trabajador Miguel ROjas"
+                            class="w-6 h-6 rounded-full object-cover" height="24"
+                            src="https://storage.googleapis.com/a1aa/image/83b0076f-af2b-43c2-354f-dccd3e81ef6e.jpg"
+                            width="24" />
+                        <span class="text-gray-900 font-normal">Miguel ROjas</span>
+                    </li>
+                    <li
+                        class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-1 cursor-pointer transition-colors duration-150">
+                        <img alt="Avatar circular con letras PV para trabajadora Pamela Veliz"
+                            class="w-6 h-6 rounded-full object-cover" height="24"
+                            src="https://storage.googleapis.com/a1aa/image/f4a7cd2e-965b-4bd1-e2fe-6de5cfc9f6ca.jpg"
+                            width="24" />
+                        <span class="text-gray-900 font-normal">Pamela Veliz</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>
