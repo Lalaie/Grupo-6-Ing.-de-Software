@@ -302,12 +302,11 @@
     </div>
     <script>
         document.getElementById('cancelBtn').addEventListener('click', () => {
-            const form = document.getElementById('reservaForm');
-            form.reset();
+            window.location.href = 'http://127.0.0.1:8000/habitacion/'
         });
 
         document.getElementById('confirmBtn').addEventListener('click', () => {
-            window.location.href = 'http://127.0.0.1:8000/habitaciones_disponibles/'; // Cambia esto a la URL correcta
+            window.location.href = 'http://127.0.0.1:8000/habitaciones_disponibles/';
         });
     </script>
 </body>

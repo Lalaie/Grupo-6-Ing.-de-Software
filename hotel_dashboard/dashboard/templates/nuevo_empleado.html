@@ -1,0 +1,304 @@
+<html lang="es">
+{% load static %}
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Empleados - Nuevo Miembro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/nuevo_empleado.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-white text-gray-700 min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div>
+            <div>
+                <i class="fas fa-user"></i>
+            </div>
+            <span>Admin - Nombre</span>
+        </div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <a class="nav-item" href="http://127.0.0.1:8000/dashboard/">
+                <i class="fas fa-chart-pie"></i>
+                <span>Vista Previa</span>
+            </a>
+            <a class="nav-item" href="#">
+                <i class="far fa-id-card"></i>
+                <span>Perfil de Usuario</span>
+            </a>
+            <a class="nav-item active" href="http://127.0.0.1:8000/empleados/">
+                <i class="fas fa-users"></i>
+                <span>Empleados</span>
+            </a>
+            <a class="nav-item" href="#">
+                <i class="fas fa-user-friends"></i>
+                <span>Reservas</span>
+            </a>
+            <a class="nav-item" href="http://127.0.0.1:8000/habitaciones/">
+                <i class="fas fa-list-ul"></i>
+                <span>Habitaciones</span>
+            </a>
+            <a class="nav-item" href="#">
+                <i class="far fa-comment"></i>
+                <span>Mensajes</span>
+            </a>
+            <a class="nav-item" href="#">
+                <i class="far fa-calendar-alt"></i>
+                <span>Calendario</span>
+            </a>
+            <a class="nav-item" href="#">
+                <i class="far fa-credit-card"></i>
+                <span>Finanzas</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 overflow-auto p-10 md:p-12 bg-white flex flex-col">
+        <!-- Top bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button aria-label="Icono de documento">
+                    <i class="far fa-file-alt"></i>
+                </button>
+                <button aria-label="Icono de estrella">
+                    <i class="far fa-star"></i>
+                </button>
+                <span class="text-gray-300">Dashboards</span>
+                <span>/</span>
+                <span class="text-gray-900 font-semibold">Empleados / Nuevo Miembro</span>
+            </div>
+            <div class="top-bar-right">
+                <div class="search-box">
+                    <input class="search-input" placeholder="Buscador" type="search" />
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <button aria-label="Modo oscuro" class="icon-button">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button aria-label="Historial" class="icon-button">
+                    <i class="fas fa-history"></i>
+                </button>
+                <button aria-label="Notificaciones" class="icon-button relative">
+                    <i class="far fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+                <button aria-label="Icono de documento" class="icon-button">
+                    <i class="far fa-file-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <section class="flex-1 flex flex-col max-w-7xl mx-auto bg-white border border-gray-100 rounded-xl p-8 md:p-12">
+            <div class="flex justify-start items-center mb-8">
+                <h2 class="font-semibold text-gray-900 text-base select-none">Equipo</h2>
+            </div>
+            <form class="flex flex-col flex-1">
+                <!-- Pagination -->
+                <nav aria-label="Paginación"
+                    class="flex items-center space-x-8 mb-10 select-none text-base font-semibold text-gray-400">
+                    <button aria-current="page" class="bg-blue-600 text-white rounded px-4 py-2" type="button">
+                        1
+                    </button>
+                    <span class="border-b border-blue-600 w-14"></span>
+                    <button class="px-4 py-2 rounded hover:bg-gray-100" type="button">
+                        2
+                    </button>
+                    <span class="border-b border-blue-600 w-14"></span>
+                    <button class="px-4 py-2 rounded hover:bg-gray-100" type="button">
+                        3
+                    </button>
+                    <span class="border-b border-blue-600 w-14"></span>
+                    <button class="px-4 py-2 rounded hover:bg-gray-100" type="button">
+                        4
+                    </button>
+                </nav>
+                <div class="flex flex-col md:flex-row md:space-x-16">
+                    <!-- Left side photo -->
+                    <div class="flex flex-col items-center space-y-3 mb-8 md:mb-0">
+                        <div
+                            class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-camera text-gray-500 text-2xl md:text-3xl"></i>
+                        </div>
+                        <button class="text-blue-600 text-sm font-semibold hover:underline" type="button">
+                            Sube una foto
+                        </button>
+                    </div>
+                    <!-- Right side form fields -->
+                    <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-8">
+                        <div class="flex flex-col">
+                            <label class="text-sm text-gray-600 font-semibold mb-2 select-none"
+                                for="nombres">Nombres</label>
+                            <input
+                                class="bg-gray-100 rounded-md px-4 py-3 text-sm text-gray-400 placeholder-gray-400 focus:outline-none"
+                                id="nombres" placeholder="Ingresa Nombre" type="text" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-sm text-gray-600 font-semibold mb-2 select-none"
+                                for="apellido">Apellido</label>
+                            <input
+                                class="bg-gray-100 rounded-md px-4 py-3 text-sm text-gray-400 placeholder-gray-400 focus:outline-none"
+                                id="apellido" placeholder="Ingresa Apellido" type="text" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-sm text-gray-600 font-semibold mb-2 select-none" for="email">Email
+                                asignado</label>
+                            <input
+                                class="bg-gray-100 rounded-md px-4 py-3 text-sm text-gray-400 placeholder-gray-400 focus:outline-none"
+                                id="email" placeholder="Ingresa @dominio.cl" type="text" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-sm text-gray-600 font-semibold mb-2 select-none"
+                                for="celular">Celular</label>
+                            <input
+                                class="bg-gray-100 rounded-md px-4 py-3 text-sm text-gray-400 placeholder-gray-400 focus:outline-none"
+                                id="celular" placeholder="Ingresa +56 numero" type="text" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-sm text-gray-600 font-semibold mb-2 select-none" for="equipo"></label>
+                            <select
+                                class="bg-gray-100 rounded-md px-4 py-3 text-sm text-gray-400 placeholder-gray-400 focus:outline-none cursor-pointer"
+                                id="equipo">
+                                <option disabled selected value=""></option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-sm text-gray-600 font-semibold mb-2 select-none" for="depto">Equipo -
+                                Depto</label>
+                            <select
+                                class="bg-gray-100 rounded-md px-4 py-3 text-sm text-gray-400 placeholder-gray-400 focus:outline-none cursor-pointer"
+                                id="depto">
+                                <option disabled selected value="">Seguridad</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end mt-auto pt-8">
+                    <a href="http://127.0.0.1:8000/empleados/"
+                        class="bg-blue-600 text-white text-sm font-semibold px-8 py-3 rounded hover:bg-blue-700 inline-block">
+                        Guardar
+                    </a>
+
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Right sidebar -->
+    <aside class="w-96 border-l border-gray-200 px-8 py-8 flex flex-col space-y-8 text-sm text-gray-700 select-none">
+        <div>
+            <h4 class="font-semibold mb-6">Alertas</h4>
+            <ul>
+                <li class="flex items-start space-x-4 mb-6">
+                    <div
+                        class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-base">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-900 leading-none">Nueva solicitud</p>
+                        <p class="text-gray-400 leading-none">Ahora</p>
+                    </div>
+                </li>
+                <li class="flex items-start space-x-4 mb-6">
+                    <div
+                        class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-base">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-900 leading-none">
+                            Nuevo usuario Registrado
+                        </p>
+                        <p class="text-gray-400 leading-none">Hace 40 minutos atrás</p>
+                    </div>
+                </li>
+                <li class="flex items-start space-x-4">
+                    <div
+                        class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-base">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-900 leading-none">Limpieza dormitorio 320</p>
+                        <p class="text-gray-400 leading-none">Ahora</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-semibold mb-6">Actividades diarias</h4>
+            <ul>
+                <li class="flex items-center space-x-4 mb-6">
+                    <img alt="Avatar circular con letras AC para actividad Nuevo Cliente"
+                        class="w-8 h-8 rounded-full object-cover" height="32"
+                        src="https://storage.googleapis.com/a1aa/image/2b78f9d9-e480-43ad-71a5-6a4f81788868.jpg"
+                        width="32" />
+                    <div>
+                        <p class="font-semibold text-gray-900 leading-none">Nuevo Cliente</p>
+                        <p class="text-gray-400 leading-none">Justo ahora</p>
+                    </div>
+                </li>
+                <li class="flex items-center space-x-4">
+                    <img alt="Avatar circular con letras IC para actividad Ingreso nueva camarera"
+                        class="w-8 h-8 rounded-full object-cover" height="32"
+                        src="https://storage.googleapis.com/a1aa/image/45b9be4f-270d-4982-aedd-aee9fac17068.jpg"
+                        width="32" />
+                    <div>
+                        <p class="font-semibold text-gray-900 leading-none">Ingreso nueva camarera</p>
+                        <p class="text-gray-400 leading-none">Hace 32 min</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-semibold mb-6">Trabajadores</h4>
+            <ul>
+                <li
+                    class="flex items-center space-x-4 hover:bg-gray-100 rounded-md p-2 cursor-pointer transition-colors duration-150 mb-2">
+                    <img alt="Avatar circular con letras NC para trabajadora Natalia Castro"
+                        class="w-8 h-8 rounded-full object-cover" height="32"
+                        src="https://storage.googleapis.com/a1aa/image/364db649-8324-4348-d3fc-f8dcdfc29a92.jpg"
+                        width="32" />
+                    <span class="text-gray-900 font-normal text-base">Natalia Castro</span>
+                </li>
+                <li
+                    class="flex items-center space-x-4 hover:bg-gray-100 rounded-md p-2 cursor-pointer transition-colors duration-150 mb-2">
+                    <img alt="Avatar circular con letras HF para trabajador Hernan Figeroa"
+                        class="w-8 h-8 rounded-full object-cover" height="32"
+                        src="https://storage.googleapis.com/a1aa/image/9b5bccad-8d8f-4987-9245-e983b5ce3af3.jpg"
+                        width="32" />
+                    <span class="text-gray-900 font-normal text-base">Hernan Figeroa</span>
+                </li>
+                <li
+                    class="flex items-center space-x-4 hover:bg-gray-100 rounded-md p-2 cursor-pointer transition-colors duration-150 mb-2">
+                    <img alt="Avatar circular con letras AB para trabajadora Andrea Bustamante"
+                        class="w-8 h-8 rounded-full object-cover" height="32"
+                        src="https://storage.googleapis.com/a1aa/image/35bf4d97-41bd-4bb3-36e5-bf0934da2ef7.jpg"
+                        width="32" />
+                    <span class="text-gray-900 font-normal text-base">Andrea Bustamante</span>
+                </li>
+                <li
+                    class="flex items-center space-x-4 hover:bg-gray-100 rounded-md p-2 cursor-pointer transition-colors duration-150 mb-2">
+                    <img alt="Avatar circular con letras MR para trabajador Miguel ROjas"
+                        class="w-8 h-8 rounded-full object-cover" height="32"
+                        src="https://storage.googleapis.com/a1aa/image/83b0076f-af2b-43c2-354f-dccd3e81ef6e.jpg"
+                        width="32" />
+                    <span class="text-gray-900 font-normal text-base">Miguel ROjas</span>
+                </li>
+                <li
+                    class="flex items-center space-x-4 hover:bg-gray-100 rounded-md p-2 cursor-pointer transition-colors duration-150">
+                    <img alt="Avatar circular con letras PV para trabajadora Pamela Veliz"
+                        class="w-8 h-8 rounded-full object-cover" height="32"
+                        src="https://storage.googleapis.com/a1aa/image/f4a7cd2e-965b-4bd1-e2fe-6de5cfc9f6ca.jpg"
+                        width="32" />
+                    <span class="text-gray-900 font-normal text-base">Pamela Veliz</span>
+                </li>
+            </ul>
+        </div>
+    </aside>
+</body>
+
+</html>

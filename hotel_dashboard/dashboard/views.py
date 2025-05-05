@@ -37,3 +37,6 @@ def editar_habitacion(request):
 def nueva_habitacion(request):   
     return render(request, 'nueva_habitacion.html')
 
+def nuevo_empleado(request):   
+    return render(request, 'nuevo_empleado.html')
+
