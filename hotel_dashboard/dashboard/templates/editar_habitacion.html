@@ -1,80 +1,64 @@
 <html lang="es">
+{% load static %}
 
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <title>Habitaciones - Habitación 2101</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="../static/css/editar.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'css/editar.css' %}"/>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
   
-<body class="bg-white text-black">
-    <div class="flex min-h-screen">
+<body class="bg-white text-gray-700 min-h-screen flex">
+    <div style="display: flex">
         <!-- Sidebar -->
-        <aside class="sidebar" aria-label="Sidebar">
+        <aside class="sidebar">
             <div>
-                <div class="user-icon" aria-hidden="true">
+                <div
+                    class="w-7 h-7 rounded-full bg-gradient-to-tr from-gray-700 to-gray-900 flex items-center justify-center text-white text-xs">
                     <i class="fas fa-user"></i>
                 </div>
-                <span>
-                    Admin - Nombre
-                </span>
+                <span>Admin - Nombre</span>
             </div>
             <nav class="nav" role="navigation" aria-label="Main navigation">
                 <a class="nav-item" href="http://127.0.0.1:8000/dashboard/">
                     <i class="fas fa-chart-pie"></i>
-                    <span>
-                        Vista Previa
-                    </span>
+                    <span>Vista Previa</span>
                 </a>
                 <a class="nav-item" href="#">
                     <i class="far fa-id-card"></i>
-                    <span>
-                        Perfil de Usuario
-                    </span>
+                    <span>Perfil de Usuario</span>
                 </a>
                 <a class="nav-item" href="http://127.0.0.1:8000/empleados/">
                     <i class="fas fa-users"></i>
-                    <span>
-                        Empleados
-                    </span>
+                    <span>Empleados</span>
                 </a>
                 <a class="nav-item" href="#">
                     <i class="fas fa-user-friends"></i>
-                    <span>
-                        Reservas
-                    </span>
+                    <span>Reservas</span>
                 </a>
                 <a class="nav-item active" href="http://127.0.0.1:8000/habitaciones/">
                     <i class="fas fa-list-ul"></i>
-                    <span>
-                        Habitaciones
-                    </span>
+                    <span>Habitaciones</span>
                 </a>
                 <a class="nav-item" href="#">
                     <i class="far fa-comment"></i>
-                    <span>
-                        Mensajes
-                    </span>
+                    <span>Mensajes</span>
                 </a>
                 <a class="nav-item" href="#">
                     <i class="far fa-calendar-alt"></i>
-                    <span>
-                        Calendario
-                    </span>
+                    <span>Calendario</span>
                 </a>
                 <a class="nav-item" href="#">
                     <i class="far fa-credit-card"></i>
-                    <span>
-                        Finanzas
-                    </span>
+                    <span>Finanzas</span>
                 </a>
             </nav>
         </aside>
         <!-- Main content -->
-        <main class="flex-1 flex flex-col border-r border-gray-200">
+        <main class="flex-1 overflow-auto p-8 bg-gray-50 flex flex-col">
             <!-- Top bar -->
             <header class="top-bar">
                 <div class="top-bar-left">
@@ -112,7 +96,7 @@
                 </div>
             </header>
             <!-- Content -->
-            <section class="flex-1 p-6 bg-gray-100 overflow-auto">
+            <section class="flex-1">
                 <div class="flex items-center justify-between mb-4 text-xs font-semibold select-none">
                     <div class="flex items-center space-x-2">
                         <span>
@@ -249,63 +233,44 @@
             </section>
         </main>
         <!-- Right sidebar -->
-        <aside class="right-sidebar">
+        <aside class="w-60 border-l border-gray-200 px-6 py-6 flex flex-col space-y-6 text-xs text-gray-700 select-none">
             <div>
-                <h4>
-                    Alertas
-                </h4>
+                <h4>Alertas</h4>
                 <ul>
                     <li class="flex items-start space-x-3">
                         <div
                             class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs">
-                            <i class="fas fa-exclamation-circle">
-                            </i>
+                            <i class="fas fa-exclamation-circle"></i>
                         </div>
                         <div>
-                            <p class="font-semibold text-gray-900 leading-none">
-                                Nueva solicitud
-                            </p>
-                            <p class="text-gray-400 leading-none">
-                                Ahora
-                            </p>
+                            <p class="font-semibold text-gray-900 leading-none">Nueva solicitud</p>
+                            <p class="text-gray-400 leading-none">Ahora</p>
                         </div>
                     </li>
                     <li class="flex items-start space-x-3">
                         <div
                             class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs">
-                            <i class="fas fa-user">
-                            </i>
+                            <i class="fas fa-user"></i>
                         </div>
                         <div>
-                            <p class="font-semibold text-gray-900 leading-none">
-                                Nuevo usuario Registrado
-                            </p>
-                            <p class="text-gray-400 leading-none">
-                                Hace 40 minutos atrás
-                            </p>
+                            <p class="font-semibold text-gray-900 leading-none">Nuevo usuario Registrado</p>
+                            <p class="text-gray-400 leading-none">Hace 40 minutos atrás</p>
                         </div>
                     </li>
                     <li class="flex items-start space-x-3">
                         <div
                             class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs">
-                            <i class="fas fa-broom">
-                            </i>
+                            <i class="fas fa-broom"></i>
                         </div>
                         <div>
-                            <p class="font-semibold text-gray-900 leading-none">
-                                Limpieza dormitorio 320
-                            </p>
-                            <p class="text-gray-400 leading-none">
-                                Ahora
-                            </p>
+                            <p class="font-semibold text-gray-900 leading-none">Limpieza dormitorio 320</p>
+                            <p class="text-gray-400 leading-none">Ahora</p>
                         </div>
                     </li>
                 </ul>
             </div>
             <div>
-                <h4>
-                    Actividades diarias
-                </h4>
+                <h4>Actividades diarias</h4>
                 <ul>
                     <li class="flex items-center space-x-3">
                         <img alt="Avatar circular con letras AC para actividad Nuevo Cliente"
@@ -313,12 +278,8 @@
                             src="https://storage.googleapis.com/a1aa/image/2b78f9d9-e480-43ad-71a5-6a4f81788868.jpg"
                             width="24" />
                         <div>
-                            <p class="font-semibold text-gray-900 leading-none">
-                                Nuevo Cliente
-                            </p>
-                            <p class="text-gray-400 leading-none">
-                                Justo ahora
-                            </p>
+                            <p class="font-semibold text-gray-900 leading-none">Nuevo Cliente</p>
+                            <p class="text-gray-400 leading-none">Justo ahora</p>
                         </div>
                     </li>
                     <li class="flex items-center space-x-3">
@@ -327,65 +288,54 @@
                             src="https://storage.googleapis.com/a1aa/image/45b9be4f-270d-4982-aedd-aee9fac17068.jpg"
                             width="24" />
                         <div>
-                            <p class="font-semibold text-gray-900 leading-none">
-                                Ingreso nueva camarera
-                            </p>
-                            <p class="text-gray-400 leading-none">
-                                Hace 32 min
-                            </p>
+                            <p class="font-semibold text-gray-900 leading-none">Ingreso nueva camarera</p>
+                            <p class="text-gray-400 leading-none">Hace 32 min</p>
                         </div>
                     </li>
                 </ul>
             </div>
             <div>
-                <h4>
-                    Trabajadores
-                </h4>
+                <h4>Trabajadores</h4>
                 <ul>
-                    <li class="flex items-center space-x-3 hoverable">
+                    <li
+                        class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-1 cursor-pointer transition-colors duration-150">
                         <img alt="Avatar circular con letras NC para trabajadora Natalia Castro"
                             class="w-6 h-6 rounded-full object-cover" height="24"
                             src="https://storage.googleapis.com/a1aa/image/364db649-8324-4348-d3fc-f8dcdfc29a92.jpg"
                             width="24" />
-                        <span class="text-gray-900 font-normal">
-                            Natalia Castro
-                        </span>
+                        <span class="text-gray-900 font-normal">Natalia Castro</span>
                     </li>
-                    <li class="flex items-center space-x-3 hoverable">
+                    <li
+                        class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-1 cursor-pointer transition-colors duration-150">
                         <img alt="Avatar circular con letras HF para trabajador Hernan Figeroa"
                             class="w-6 h-6 rounded-full object-cover" height="24"
                             src="https://storage.googleapis.com/a1aa/image/9b5bccad-8d8f-4987-9245-e983b5ce3af3.jpg"
                             width="24" />
-                        <span class="text-gray-900 font-normal">
-                            Hernan Figeroa
-                        </span>
+                        <span class="text-gray-900 font-normal">Hernan Figeroa</span>
                     </li>
-                    <li class="flex items-center space-x-3 hoverable">
+                    <li
+                        class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-1 cursor-pointer transition-colors duration-150">
                         <img alt="Avatar circular con letras AB para trabajadora Andrea Bustamante"
                             class="w-6 h-6 rounded-full object-cover" height="24"
                             src="https://storage.googleapis.com/a1aa/image/35bf4d97-41bd-4bb3-36e5-bf0934da2ef7.jpg"
                             width="24" />
-                        <span class="text-gray-900 font-normal">
-                            Andrea Bustamante
-                        </span>
+                        <span class="text-gray-900 font-normal">Andrea Bustamante</span>
                     </li>
-                    <li class="flex items-center space-x-3 hoverable">
+                    <li
+                        class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-1 cursor-pointer transition-colors duration-150">
                         <img alt="Avatar circular con letras MR para trabajador Miguel ROjas"
                             class="w-6 h-6 rounded-full object-cover" height="24"
                             src="https://storage.googleapis.com/a1aa/image/83b0076f-af2b-43c2-354f-dccd3e81ef6e.jpg"
                             width="24" />
-                        <span class="text-gray-900 font-normal">
-                            Miguel ROjas
-                        </span>
+                        <span class="text-gray-900 font-normal">Miguel ROjas</span>
                     </li>
-                    <li class="flex items-center space-x-3 hoverable">
+                    <li
+                        class="flex items-center space-x-3 hover:bg-gray-100 rounded-md p-1 cursor-pointer transition-colors duration-150">
                         <img alt="Avatar circular con letras PV para trabajadora Pamela Veliz"
                             class="w-6 h-6 rounded-full object-cover" height="24"
                             src="https://storage.googleapis.com/a1aa/image/f4a7cd2e-965b-4bd1-e2fe-6de5cfc9f6ca.jpg"
                             width="24" />
-                        <span class="text-gray-900 font-normal">
-                            Pamela Veliz
-                        </span>
+                        <span class="text-gray-900 font-normal">Pamela Veliz</span>
                     </li>
                 </ul>
             </div>
