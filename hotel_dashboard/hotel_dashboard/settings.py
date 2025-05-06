@@ -76,17 +76,8 @@ WSGI_APPLICATION = 'hotel_dashboard.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'xe',
-        'HOST': 'localhost',
-        'PORT': '1521',
-        'USER': 'hotelpcfreef',
-        'PASSWORD': 'pcfreefadmin',
-        'TEST': {
-            'USER': 'default_test',
-            'TBLSPACE': 'default_test_tbls',
-            'TBLSPACE_TMP': 'default_test_tbls_tmp',
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
